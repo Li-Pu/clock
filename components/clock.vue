@@ -2,17 +2,17 @@
     <div class="clock-container">
         <div class="clock-content">
             <div class="clock-text">
-                <span class="time-text hour">{{ time.hour }}</span>
+                <span class="time-text hour">{{ timeNumberFormat(time.hour) }}</span>
                 <span class="gap">{{ time.second % 2 === 0 ? '' : ':' }}</span>
-                <span class="time-text minute">{{ time.minute }}</span>
+                <span class="time-text minute">{{ timeNumberFormat(time.minute) }}</span>
                 <span class="gap">{{ time.second % 2 === 0 ? '' : ':' }}</span>
-                <span class="time-text second">{{ time.second }}</span>
+                <span class="time-text second">{{ timeNumberFormat(time.second) }}</span>
             </div>
         </div>
     </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 const time = useTime();
 </script>
 
