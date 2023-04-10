@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="w-screen h-screen flex flex-row items-center justify-center">
     <div v-for="clock in routeMap" :key="clock.link">
       <NuxtLink :to="`/${clock.link}`">{{ clock.title }}</NuxtLink>
     </div>
@@ -11,17 +11,11 @@ const routeMap = [
   {
     link: 'base',
     title: '基本钟表',
-  }
+  },
+  {
+    // inspired by https://github.com/jaibisht/Digital-Clock',
+    link: 'neon',
+    title: '霓虹效果钟表',
+  },
 ]
 </script>
-
-<style scoped>
-.container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-</style>
