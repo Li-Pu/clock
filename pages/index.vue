@@ -1,6 +1,6 @@
 <template>
-  <div class="w-screen h-screen flex flex-row items-center justify-center">
-    <div v-for="clock in routeMap" :key="clock.link">
+  <div class="w-screen h-screen flex flex-col items-center justify-center">
+    <div class="list-item w-40" v-for="clock in routeMap" :key="clock.link">
       <NuxtLink :to="`/${clock.link}`">{{ clock.title }}</NuxtLink>
     </div>
   </div>
