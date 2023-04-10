@@ -1,7 +1,9 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "version": "0.0.0",
   "scripts": {
+    "release": "standard-version",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -10,6 +12,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.6.5",
-    "nuxt": "^3.3.3"
+    "nuxt": "^3.3.3",
+    "standard-version": "^9.5.0"
   }
 }
