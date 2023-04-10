@@ -11,6 +11,11 @@ const routeMap = [
   {
     link: 'base',
     title: '基本钟表',
-  }
+  },
+  {
+    // inspired by https://github.com/jaibisht/Digital-Clock',
+    link: 'neon',
+    title: '霓虹效果钟表',
+  },
 ]
 </script>
