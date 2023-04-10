@@ -17,5 +17,9 @@ const routeMap = [
     link: 'neon',
     title: '霓虹效果钟表',
   },
+  {
+    link: 'pointer',
+    title: '指针时钟',
+  },
 ]
 </script>
