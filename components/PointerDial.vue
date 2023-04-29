@@ -1,17 +1,17 @@
 <template>
-    <Dial class="cursor-default">
-        <div class="w-full h-full relative border-2 border-gray-100 rounded-full">
+    <Dial>
+        <div :class="['w-full h-full relative border-2 border-gray-100 rounded-full', props.borderClassNames]">
             <template v-for="anchor in anchors">
                 <div v-if="anchor.showHourAnchor || anchor.showHourLabel || anchor.showMinuteAnchor"
                     class="anchor absolute text-center flex flex-col items-center"
                     :style="{ '--anchor-value': anchor.value }">
-                    <slot name="hourAnchor">
+                    <slot name="hourAnchor" :anchor="anchor">
                         <div v-if="anchor.showHourAnchor" class="w-1 h-3 bg-gray-100"></div>
                     </slot>
-                    <slot name="minuteAnchor">
+                    <slot name="minuteAnchor" :anchor="anchor">
                         <div v-if="anchor.showMinuteAnchor" class="w-0.5 h-2 bg-gray-100"></div>
                     </slot>
-                    <slot name="hourLabel">
+                    <slot name="hourLabel" :anchor="anchor">
                         <div v-if="anchor.showHourLabel && anchor.hourLabel" class="anchor-label text-xl">
                             {{ anchor.hourLabel }}
                         </div>
@@ -31,12 +31,14 @@
 <script setup lang="ts">
 
 export interface Props {
+    borderClassNames: string
     showHourAnchor?: boolean | ((hour: number) => boolean)
     showHourLabel?: boolean | ((hour: number) => boolean)
     showMinuteAnchor?: boolean | ((minute: number) => boolean)
 }
 
 const props = withDefaults(defineProps<Props>(), {
+    borderClassNames: '',
     showHourAnchor: true,
     showHourLabel: () => ((hour: number) => hour % 3 === 0),
     showMinuteAnchor: () => ((minute: number) => minute % 5 !== 0)
