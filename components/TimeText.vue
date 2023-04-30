@@ -1,6 +1,6 @@
 <template>
     <div>
-        <slot>{{ text }}</slot>
+        <slot :text="text">{{ text }}</slot>
     </div>
 </template>
 

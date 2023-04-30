@@ -1,11 +1,11 @@
 <template>
-    <div class="font-mono text-9xl flex flex-row text-center">
+    <BaseTimeContent class="font-mono text-9xl flex flex-row text-center">
         <TimeText :value="props.time.hour"></TimeText>
         <span :class="{ 'invisible': time.second % 2 === 0 }">:</span>
         <TimeText :value="props.time.minute"></TimeText>
         <span :class="{ 'invisible': time.second % 2 === 0 }">:</span>
         <TimeText :value="props.time.second"></TimeText>
-    </div>
+    </BaseTimeContent>
 </template>
 
 <script setup lang="ts">
