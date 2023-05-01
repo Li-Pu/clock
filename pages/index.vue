@@ -29,5 +29,9 @@ const routeMap = [
     link: 'led',
     title: 'LED钟表',
   },
+  {
+    link: 'neon-led',
+    title: '霓虹LED钟表',
+  },
 ]
 </script>

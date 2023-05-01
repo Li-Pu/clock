@@ -2,7 +2,7 @@
     <BaseTimeContent class="font-mono text-9xl flex flex-row text-center" :style="style">
         <TimeText class="flex flex-row items-center" :value="props.time.hour" v-slot="{ text }">
             <LEDNumberCharacter v-for="(char, index) in text.split('')" :index="index" :char="char"
-                class="min-w-[80px] min-h-[128px] ml-6" />
+                class="character min-w-[80px] min-h-[128px] ml-6" />
         </TimeText>
         <div class="w-[32px] flex flex-col justify-center items-center ml-6" :class="{ 'invisible': time.second % 2 === 0 }">
             <div class="colon w-[16px] h-[16px] rounded-full"></div>
@@ -10,7 +10,7 @@
         </div>
         <TimeText class="flex flex-row items-center" :value="props.time.minute" v-slot="{ text }">
             <LEDNumberCharacter v-for="(char, index) in text.split('')" :index="index" :char="char"
-                class="min-w-[80px] min-h-[128px] ml-6" />
+                class="character min-w-[80px] min-h-[128px] ml-6" />
         </TimeText>
         <div class="w-[32px] flex flex-col justify-center items-center ml-6" :class="{ 'invisible': time.second % 2 === 0 }">
             <div class="colon w-[16px] h-[16px] rounded-full"></div>
@@ -18,7 +18,7 @@
         </div>
         <TimeText class="flex flex-row items-center" :value="props.time.second" v-slot="{ text }">
             <LEDNumberCharacter v-for="(char, index) in text.split('')" :index="index" :char="char"
-                class="min-w-[80px] min-h-[128px] ml-6" />
+                class="character min-w-[80px] min-h-[128px] ml-6" />
         </TimeText>
     </BaseTimeContent>
 </template>
@@ -51,5 +51,9 @@ const style = computed(() => {
 <style scoped>
 .colon {
     background-color: var(--led-number-content-color);
+}
+
+.character {
+    color: var(--led-number-content-color);
 }
 </style>
